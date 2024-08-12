@@ -38,11 +38,9 @@ def createProjectStructure(user_path: str, project_name: str) -> None:
     if not os.path.exists(user_folder_path):
         os.makedirs(user_folder_path)
         
-        # Create the Vagrantfile
         vagrantfile_path: str = os.path.join(user_folder_path, "Vagrantfile")
         os.system(f"cd {user_folder_path} && vagrant init")
         
-        # Create sub-folders
         sub_folders: List[str] = ['doc', 'env']
         for sub_folder in sub_folders:
             sub_folder_path: str = os.path.join(user_folder_path, sub_folder)
@@ -55,7 +53,6 @@ def createProjectStructure(user_path: str, project_name: str) -> None:
                     os.makedirs(sub_sub_folder_path)
 
                     if sub_sub_folder == 'cluster':
-                        # Create files in cluster folder
                         files_to_create = [
                             "cmd.md", "main.tf", "config.hcl", 
                             "outputs.tf", "provision.sh", "variables.tf"
@@ -63,13 +60,11 @@ def createProjectStructure(user_path: str, project_name: str) -> None:
                         for file_name in files_to_create:
                             open(os.path.join(sub_sub_folder_path, file_name), 'w').close()
                         
-                        # Create job folder with job.hcl file
                         job_folder_path = os.path.join(sub_sub_folder_path, 'job')
                         os.makedirs(job_folder_path)
                         open(os.path.join(job_folder_path, "job.hcl"), 'w').close()
 
                     elif sub_sub_folder == 'provision':
-                        # Copy files from a 'provision' folder at the root level to this provision folder
                         root_provision_folder = os.path.join(os.getcwd(), 'provision')
                         if os.path.exists(root_provision_folder):
                             for file_name in os.listdir(root_provision_folder):
