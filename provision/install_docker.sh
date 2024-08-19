@@ -1,3 +1,4 @@
+echo "--------------------------------------------------------"
 echo "START INSTALL DOCKER"
 
 sudo apt-get update -y
@@ -20,3 +21,4 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 docker --version
 
 echo "DOCKER INSTALLATION COMPLETED"
+echo "--------------------------------------------------------"

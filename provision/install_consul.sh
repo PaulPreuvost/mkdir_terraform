@@ -1,3 +1,4 @@
+echo "--------------------------------------------------------"
 echo "START INSTALL CONSUL"
 
 sudo apt-get install -y consul
@@ -5,3 +6,4 @@ sudo apt-get install -y consul
 consul --version 
 
 echo "CONSUL INSTALLATION COMPLETED"
+echo "--------------------------------------------------------"
