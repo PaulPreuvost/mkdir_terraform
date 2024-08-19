@@ -1,3 +1,4 @@
+echo "--------------------------------------------------------"
 echo "START INSTALL TERRAFORM"
 
 wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
@@ -10,3 +11,4 @@ sudo apt-get update -y && sudo apt-get install -y terraform
 terraform --version
 
 echo "TERRAFORM INSTALLATION COMPLETED"
+echo "--------------------------------------------------------"
